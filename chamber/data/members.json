@@ -1,0 +1,9 @@
+[
+  {"name": "Teton Tech", "address": "123 Innovation Way", "phone": "208-555-0101", "website": "https://google.com", "image": "teton.webp", "membership": "Gold"},
+  {"name": "Pathway Coffee", "address": "456 Mocha Dr", "phone": "208-555-0102", "website": "https://google.com", "image": "coffee.webp", "membership": "Silver"},
+  {"name": "Rexburg Creative", "address": "789 Pixel St", "phone": "208-555-0103", "website": "https://google.com", "image": "creative.webp", "membership": "Bronze"},
+  {"name": "Cloud Nine Systems", "address": "101 Sky Lane", "phone": "208-555-0104", "website": "https://google.com", "image": "cloud.webp", "membership": "Gold"},
+  {"name": "Main St. Bakery", "address": "202 Flour Ave", "phone": "208-555-0105", "website": "https://google.com", "image": "bakery.webp", "membership": "Silver"},
+  {"name": "Elite Consulting", "address": "303 Strategy Rd", "phone": "208-555-0106", "website": "https://google.com", "image": "consulting.webp", "membership": "Bronze"},
+  {"name": "Logistics Pro", "address": "404 Cargo Way", "phone": "208-555-0107", "website": "https://google.com", "image": "logistics.webp", "membership": "Gold"}
+]

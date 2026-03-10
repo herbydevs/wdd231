@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber Directory | WDD 231</title>
+    <meta name="description" content="Official business directory for the local Chamber of Commerce.">
+    <link rel="stylesheet" href="styles/directory.css">
+    <script src="scripts/directory.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Chamber of Commerce</h1>
+        <nav>
+            <button id="menu" title="Toggle Menu">☰</button>
+            <ul class="navigation">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="directory.html" class="active">Directory</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="view-controls">
+            <button id="grid" aria-label="Grid View">Grid View</button>
+            <button id="list" aria-label="List View">List View</button>
+        </div>
+        <article id="members" class="grid-view"></article>
+    </main>
+    <footer>
+        <p>&copy; <span id="year"></span> | Adafa Ralph | Rexburg, ID</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
