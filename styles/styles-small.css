@@ -8,7 +8,7 @@
     --text-color: #333;
     --bg-color: #f4f4f4;
     --white: #ffffff;
-    --padding-mobile: 1.2rem;
+    --padding-std: 1.5rem;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -24,19 +24,20 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
-    min-width: 320px; /* Requirement: 320px and up */
+    /* Prevents text touching the very edge of mobile screens */
+    min-width: 320px;
 }
 
 /* --- HEADER & NAVIGATION --- */
 header {
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 1rem var(--padding-mobile);
-    /* Flexbox Requirement */
+    padding: 1rem var(--padding-std);
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: var(--shadow);
+    z-index: 1000;
 }
 
 .header-brand {
@@ -49,6 +50,11 @@ header {
     width: 45px;
     height: 45px;
     fill: var(--white);
+}
+
+.header-brand span {
+    font-size: 1.25rem;
+    font-weight: 700;
 }
 
 #menu-toggle {
@@ -77,38 +83,41 @@ nav ul.show {
 
 nav a {
     display: block;
-    padding: 1.2rem;
+    padding: 1rem;
     color: var(--white);
     text-decoration: none;
     text-align: center;
-    transition: background 0.3s;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
     background-color: var(--accent-color);
+    color: var(--white);
 }
 
-/* Wayfinding */
+/* Wayfinding - Applied to the active link */
 .active {
     background-color: rgba(0, 0, 0, 0.4);
-    font-weight: bold;
     border-left: 4px solid var(--accent-color);
+    font-weight: bold;
 }
 
 /* --- MAIN CONTENT --- */
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--padding-mobile);
+    padding: var(--padding-std);
 }
 
 h1 {
     text-align: center;
-    margin: 1.5rem 0;
-    border-bottom: 3px solid var(--accent-color);
-    padding-bottom: 0.5rem;
+    margin: 1rem 0 2rem 0;
     color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 0.5rem;
 }
 
 .content-grid {
@@ -127,28 +136,45 @@ section {
 h2 {
     margin-bottom: 1.2rem;
     color: var(--primary-color);
-    border-bottom: 1px solid #eee;
-    padding-bottom: 0.5rem;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1.2rem;
+}
+
+section p,
+section ul {
+    padding: 0 0.5rem;
+}
+
+section ul {
+    list-style-position: inside;
+    margin-top: 0.5rem;
 }
 
 /* --- COURSE CARDS SECTION --- */
+.course-work {
+    text-align: center;
+}
+
 .filter-buttons {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 2rem;
+    margin: 1.5rem 0;
     flex-wrap: wrap;
 }
 
 .filter-buttons button {
-    padding: 0.7rem 1.4rem;
-    border: 1px solid var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary-color);
     border-radius: 4px;
     background-color: var(--white);
     color: var(--primary-color);
-    cursor: pointer;
     font-weight: bold;
-    transition: all 0.3s ease;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .filter-buttons button:hover {
@@ -160,14 +186,16 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 15px;
+    margin-top: 1rem;
 }
 
 .course-card {
     padding: 1.5rem 1rem;
-    border-radius: 5px;
+    border-radius: 6px;
     text-align: center;
-    font-weight: bold;
-    border: 1px solid #ccc;
+    font-weight: 700;
+    border: 1px solid #ddd;
+    transition: transform 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,24 +203,23 @@ h2 {
 
 .completed {
     background-color: var(--completed-bg);
-    border-color: #28a745;
     color: #155724;
+    border: 1px solid #c3e6cb;
 }
 
 .incomplete {
     background-color: var(--incomplete-bg);
-    border-color: #dc3545;
     color: #721c24;
+    border: 1px solid #f5c6cb;
 }
 
 .total-credits {
     margin-top: 2rem;
-    font-size: 1.3rem;
-    text-align: center;
-    font-weight: bold;
-    color: var(--primary-color);
-    border-top: 2px solid #eee;
     padding-top: 1rem;
+    font-size: 1.25rem;
+    border-top: 1px solid #eee;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
 /* --- FOOTER --- */
@@ -200,58 +227,43 @@ footer {
     background-color: var(--primary-color);
     color: var(--white);
     text-align: center;
-    padding: 2.5rem 1rem;
+    padding: 2.5rem 1.5rem;
     margin-top: 3rem;
+    border-top: 5px solid var(--accent-color);
 }
 
 .social-links {
     margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 20px;
 }
 
 .social-links a {
     color: var(--white);
     text-decoration: none;
-    font-size: 1.2rem;
     background: var(--secondary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--accent-color);
+    transform: translateY(-3px);
 }
 
 footer p {
     margin: 8px 0;
     font-size: 0.95rem;
+    opacity: 0.9;
 }
 
-/* --- MEDIA QUERIES (LARGER.CSS) --- */
-@media (min-width: 768px) {
-    #menu-toggle {
-        display: none;
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    nav a {
-        border-bottom: none;
-        padding: 1rem 2rem;
-    }
-
-    .active {
-        border-left: none;
-        border-bottom: 3px solid var(--accent-color);
-    }
-
-    .content-grid {
-        grid-template-columns: 2fr 1fr;
-    }
-
-    .course-work {
-        grid-column: 1 / span 2;
-    }
+#lastModified {
+    color: var(--accent-color);
+    font-weight: bold;
 }
