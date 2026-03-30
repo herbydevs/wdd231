@@ -1,0 +1,81 @@
+/* Update these variables with your chosen colors */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #18bc9c;
+    --accent-color: #ecf0f1;
+    --text-color: #333;
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    margin: 0;
+    padding: 20px;
+}
+
+header, footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+header h1 { color: white; }
+
+section {
+    background: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Color Palette Display */
+.color-box {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+}
+.primary { background-color: var(--primary-color); }
+.secondary { background-color: var(--secondary-color); }
+.accent { background-color: #7f8c8d; } /* Example accent */
+
+/* Simple Wireframe Representation */
+.wireframe-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.wireframe-mockup {
+    border: 2px solid #ccc;
+    background: #f9f9f9;
+    padding: 10px;
+}
+
+.mobile { width: 150px; height: 250px; }
+.desktop { width: 300px; height: 250px; }
+
+.wf-nav, .wf-hero, .wf-content, .wf-footer, .wf-hero-lg, .wf-sidebar {
+    border: 1px dashed #999;
+    margin: 5px 0;
+    text-align: center;
+    font-size: 0.8rem;
+    background: white;
+}
+
+.wf-main-flex { display: flex; gap: 5px; }
+.wf-hero-lg { flex: 2; height: 100px; }
+.wf-sidebar { flex: 1; height: 100px; }
