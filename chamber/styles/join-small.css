@@ -1,0 +1,23 @@
+/* Desktop View (Screens wider than 800px) */
+@media (min-width: 800px) {
+    .join-container {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 2fr 1fr; /* Form on left, cards on right */
+    }
+
+    h1 {
+        grid-column: 1 / -1; /* Title spans both columns */
+    }
+
+    .form-section {
+        grid-column: 1;
+    }
+
+    .membership-cards {
+        grid-column: 2;
+        /* Keeps cards in a neat side-bar column */
+        display: flex;
+        flex-direction: column;
+    }
+}

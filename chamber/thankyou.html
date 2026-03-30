@@ -1,0 +1,22 @@
+<main>
+    <h1>Thank You for Joining!</h1>
+    <p>Your application has been received. Here is the summary of your submission:</p>
+    <div id="results"></div>
+</main>
+
+<script>
+    // Grab URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const resultsContainer = document.getElementById('results');
+
+    // List of required fields to display
+    const fields = ['firstname', 'lastname', 'email', 'phone', 'organization', 'timestamp'];
+    
+    fields.forEach(field => {
+        if (urlParams.has(field)) {
+            const p = document.createElement('p');
+            p.innerHTML = `<strong>${field.charAt(0).toUpperCase() + field.slice(1)}:</strong> ${urlParams.get(field)}`;
+            resultsContainer.appendChild(p);
+        }
+    });
+</script>
